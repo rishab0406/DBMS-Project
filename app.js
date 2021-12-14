@@ -1,5 +1,5 @@
 //jshint esversion:6
-require('dotenv').config() //as we have configured the package here, we can access the environment variables anywhere after this line.
+require('dotenv').config()
 const express=require("express");
 const ejs=require("ejs");
 const bodyParser=require("body-parser");
@@ -29,8 +29,8 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser: true, useUnifiedTopology : true});
 mongoose.set('useCreateIndex', true);
 
-const userSchema =new mongoose.Schema({  // We do this new mongoose.schema thing as now we want to encrypt
-  email : String,                        // we need to follow a set of guidelines like these.
+const userSchema =new mongoose.Schema({  
+  email : String,                        
   password : String,
   facebookId: String,
   googleId : String,
